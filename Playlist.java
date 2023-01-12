@@ -11,8 +11,12 @@ public class Playlist {
      * Fields-- This will likely just need to be the ArrayList of Songs. Reference our previous problems
      * (CarDealership, Zoo) for structure on how this will look
      */
+    public ArrayList<Song> songs;
+    private String title, artist; private double duration; private String status;
 
-
+    public Playlist(){
+        this.title = title; this.artist = artist; this.duration = duration; this.status = status;
+    }
 
 
      /**
