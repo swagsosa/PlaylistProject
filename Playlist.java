@@ -38,22 +38,43 @@ public class Playlist {
        * Removing all unliked songs from the playlist (careful with this one!)
        */
 
+    public void getSongs(){
+        for(Song x : songs){
+            if(x.is)
+        }
+    }
+    
     public void addPlaylist(Song s){
         songs.add(s);
     }
 
-
-
-    public boolean likeSong(int pos){
-        for (int i = 0; i < songs.size() - 1; i++){
-            if(i = songs.get(pos)){
-                status = true;
-            }
+    public void likeSong(int pos){
+        if(pos >= 0 && pos < songs.size()){
+            Song s = songs.get(pos);
+            s.like();
+        } else{
+            System.out.println("No song with that index exists!");
         }
-        return status;
     }
 
     public void remove(int pos){
-        songs.get(pos).remove()
+        songs.remove(pos);
+    }
+
+    public void totalduration(Song s){
+       int total = 0;
+        for (int i = 0; i < songs.size() - 1; i++){
+            
+            s.getDuration();
+    }
+}
+
+    public void removeLiked(){
+        for(int i = 0; i < songs.size(); i++){
+            if(songs.get(i).isLiked()){
+                songs.remove(i);
+                i--;
+            }
+        }
     }
 }

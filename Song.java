@@ -53,7 +53,7 @@ public void unlike(){
     like = false;
 }
 
-public boolean getLike(){
+public boolean isLiked(){
     return like;
 }
 
