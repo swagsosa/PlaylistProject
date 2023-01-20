@@ -7,52 +7,57 @@
  * @version
  */
 public class PlaylistTester {
-    public static void main(String[] args) {
-        System.out.println("Initializing a Playlist...\n");
-        Playlist cool = new Playlist();
-
-        System.out.println("Adding songs to the Playlist...\n");
-        /**
-         * Add some songs here. Note that the format for adding a Song to a Playlist p
-         * is something like...
-         * p.addSong(new Song(..., ..., ...))
-         */
-        cool.addPlaylist(new Song("When I Was Your Man", "Bruno Mars", "3:23"));
-        cool.addPlaylist(new Song("Dark Night Dummo", "Trippe Red", "3:45"));
-        cool.addPlaylist(new Song("Sky", "Playboy Carti", "3:13"));
-        cool.addPlaylist(new Song("Kill Bill", "SZA", "2:41"));
-        cool.addPlaylist(new Song("Chicago Freestyle", "Drake", "4:21"));
-        System.out.println("Printing the songs...\n");
-        //Print out all the songs in the playlist to verify it's working correctly
-
-
-        System.out.println("\nLiking the songs in position 2 and 4 \n");
-        //Once your songs are 'liked', this should be reflected in the next printout
-        cool.likeSong(2);
-        cool.likeSong(4);
-
-        System.out.println("Printing the songs...\n");
-        cool.getSongs();
-
-        System.out.println("\nRemoving the song in position A, B, C, etc...\n");
-
-
-        System.out.println("Printing the songs...\n");
-
-
-        System.out.println("\nPrinting only the liked songs...\n");
-        //Your Playlist should be able to do this without looping while in main!
-
-
-        System.out.println("\nPrinting the total duration of all songs...\n");
-        //Note that the format should look something like minutes:seconds
-
-
-        System.out.println("\nRemoving all unliked songs from the playlist...\n");
-        //This should be doable with a single method call
-
-
-        System.out.println("Printing all songs...\n");
-        //This should now look like only the liked songs list from before
+    public static void main(String[] args){
+        Playlist jams = new Playlist();
+        System.out.println("Initializing playlist...");
+        System.out.println("Adding songs to the playlist...");
+        Song one = new Song("Long Time", "Playboi Carti", "2:43");
+        jams.addSong(one);
+        System.out.println("Added \"Long Time\" by Playboi Carti (2:43)");
+        Song two = new Song("When I Was Your Man", "Bruno Mars", "3:35");
+        jams.addSong(two);
+        System.out.println("Added \"When I Was Your Man\" by Bruno Mars (3:35)");
+        Song three = new Song("Blind", "SZA", "3:02");
+        jams.addSong(three);
+        System.out.println("Added \"Blind\" by SZA (3:02)");
+        Song four = new Song("Golden Hour", "JVKE", "3:48");
+        jams.addSong(four);
+        System.out.println("Added \"Golden Hour\" by JVKE (3:48)");
+        Song five = new Song("Flawless", "Yeat", "2:56");
+        jams.addSong(five);
+        System.out.println("Added \"Flawless\" by Yeat (2:56)");
+        System.out.println();
+        System.out.println("Printing playlist...");
+        System.out.println();
+        jams.getPlaylist();
+        System.out.println();
+        System.out.println("Liking \"Long Time\" and \"Blind\"...");
+        jams.likeSong(0);
+        jams.likeSong(2);
+        System.out.println();
+        System.out.println("Printing playlist...");
+        System.out.println();
+        jams.getPlaylist();
+        System.out.println();
+        System.out.println("Printing total playlist duration...");
+        System.out.println();
+        System.out.println(jams.getTotal());
+        System.out.println("Removing \"When I Was Your Man\" from the playlist...");
+        jams.removeSong(1);
+        System.out.println();
+        System.out.println("Printing playlist...");
+        System.out.println();
+        jams.getPlaylist();
+        System.out.println();
+        System.out.println("Printing only the liked songs...");
+        System.out.println();
+        jams.getLikedSongs();
+        System.out.println();
+        System.out.println("Removing liked songs...");
+        jams.removeLiked();
+        System.out.println();
+        System.out.println("Printing playlist...");
+        System.out.println();
+        jams.getPlaylist();
+        }
     }
-}
